@@ -2,6 +2,7 @@ import sys
 
 DB_PHONES = {}
 
+
 def input_error(func):
     def wrapped(*args):
         try:
@@ -13,6 +14,7 @@ def input_error(func):
         except ValueError:
             return "This command 'change', you must write - 'change' 'name' 'number'"
     return wrapped
+
 
 @input_error
 def add_phone(*args):
