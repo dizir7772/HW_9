@@ -48,11 +48,14 @@ def greeting(*args):
 
 def get_contacts(*args):
     list = []
-    for k, v in DB_PHONES.items():
-        _ = k.title() + ' ' + str(v)
-        list.append(_)
-        contact_list = ('\n').join(list)
-    return f'Contacts list:\n{contact_list}'
+    if not DB_PHONES:
+        return f'Contacts list is empty, your need to add some info at first'
+    else:
+        for k, v in DB_PHONES.items():
+            _ = k.title() + ' ' + str(v)
+            list.append(_)
+            contact_list = ('\n').join(list)
+        return f'Contacts list:\n{contact_list}'
 
 
 COMMANDS = {
